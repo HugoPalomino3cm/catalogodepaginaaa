@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Catálogo de Productos</h1>
+            <div class="contact-info">
+                <span>📞</span>
+                <a href="tel:+56984424107">+56 9 8442 4107</a>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar productos...">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Filtros de categorías -->
+        <section class="category-filters">
+            <button class="category-btn active" data-category="all">Todos</button>
+            <button class="category-btn" data-category="escolar">Escolar</button>
+            <button class="category-btn" data-category="oficina">Oficina</button>
+            <button class="category-btn" data-category="papeleria">Papelería</button>
+            <button class="category-btn" data-category="arte">Arte y Manualidades</button>
+            <button class="category-btn" data-category="tecnologia">Tecnología</button>
+        </section>
+
+        <!-- Contador de productos -->
+        <div class="product-count">
+            <p>Mostrando <span id="productCount">0</span> productos</p>
+        </div>
+
+        <!-- Grid de productos -->
+        <section class="products-grid" id="productsGrid">
+            <!-- Los productos se cargarán dinámicamente desde JavaScript -->
+        </section>
+
+        <!-- Paginación -->
+        <div class="pagination" id="pagination">
+            <!-- Los botones de paginación se generarán dinámicamente -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Catálogo de Productos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
