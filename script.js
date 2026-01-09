@@ -11,7 +11,10 @@ function renderProducts() {
     
     // Filtrar productos por categoría y búsqueda
     let filteredProducts = products.filter(product => {
-        const matchesCategory = currentCategory === 'all' || product.category === currentCategory;
+        const matchesCategory = currentCategory === 'all' || 
+            (Array.isArray(product.category) 
+                ? product.category.includes(currentCategory)
+                : product.category === currentCategory);
         const matchesSearch = product.name.toLowerCase().includes(currentSearch.toLowerCase());
         return matchesCategory && matchesSearch;
     });
@@ -50,15 +53,24 @@ function renderProducts() {
             'escolar': 'Escolar',
             'oficina': 'Oficina',
             'papeleria': 'Papelería',
-            'arte': 'Arte',
+            'arte': 'Arte y Manualidades',
             'tecnologia': 'Tecnología',
-            'jugueteria': 'Juguetería'
+            'jugueteria': 'Juguetería',
+            'limpieza': 'Limpieza',
+            'cuidado-personal': 'Cuidado Personal'
+        };
+
+        const getCategoryLabel = (category) => {
+            if (Array.isArray(category)) {
+                return category.map(cat => categoryNames[cat] || cat).join(' • ');
+            }
+            return categoryNames[category] || category;
         };
 
         productCard.innerHTML = `
             <div class="product-image ${product.image ? '' : 'placeholder'}">
                 ${product.image ? `<img src="${product.image}" alt="${product.name}" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none';">` : ''}
-                <span class="category-badge">${categoryNames[product.category] || product.category}</span>
+                <span class="category-badge">${getCategoryLabel(product.category)}</span>
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
