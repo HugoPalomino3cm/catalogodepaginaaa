@@ -44,6 +44,15 @@ function renderProducts() {
         return;
     }
 
+    // Aplicar/remover temas solo para Halloween y Fiestas Patrias
+    productsGrid.classList.remove('halloween-theme', 'fiestas-patrias-theme');
+    
+    if (currentCategory === 'halloween') {
+        productsGrid.classList.add('halloween-theme');
+    } else if (currentCategory === 'fiestas-patrias') {
+        productsGrid.classList.add('fiestas-patrias-theme');
+    }
+
     // Renderizar productos
     productsToShow.forEach(product => {
         const productCard = document.createElement('div');
@@ -57,7 +66,11 @@ function renderProducts() {
             'tecnologia': 'Tecnología',
             'jugueteria': 'Juguetería',
             'limpieza': 'Limpieza',
-            'cuidado-personal': 'Cuidado Personal'
+            'hogar': 'Hogar',
+            'dulces': 'Dulces',
+            'cuidado-personal': 'Cuidado Personal',
+            'halloween': '🎃 Halloween',
+            'fiestas-patrias': 'Fiestas Patrias'
         };
 
         const getCategoryLabel = (category) => {
