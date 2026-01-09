@@ -51,7 +51,8 @@ function renderProducts() {
             'oficina': 'Oficina',
             'papeleria': 'Papelería',
             'arte': 'Arte',
-            'tecnologia': 'Tecnología'
+            'tecnologia': 'Tecnología',
+            'jugueteria': 'Juguetería'
         };
 
         productCard.innerHTML = `
