@@ -71,7 +71,7 @@ const products = [
     { name: "Producto 67", category: "papeleria", image: "imagenes/papeleria/67.jpeg" },
     { name: "Producto 68", category: ["escolar", "arte"], image: "imagenes/arte/68.jpeg" }, 
     { name: "Producto 69", category: ["escolar", "arte"], image: "imagenes/escolar/69.jpeg" }, 
-    { name: "Producto 70", category: ["escolar", "oficina","hogar"], image: "imagenes/escolar/70.jpeg" }, 
+    { name: "Producto 70", category: ["escolar","hogar"], image: "imagenes/escolar/70.jpeg" }, 
     { name: "Producto 71", category: ["escolar", "oficina","hogar"], image: "imagenes/escolar/71.jpeg" }, 
     { name: "Producto 72", category: ["escolar", "arte"], image: "imagenes/arte/72.jpeg" }, 
     { name: "Producto 73", category: ["hogar", "limpieza"], image: "imagenes/hogar/73.jpeg" },
